@@ -2,4 +2,5 @@ channels:
   - conda-forge
 dependencies:
   - r-base
+  - r-shinydashboard
   - r-learnr
