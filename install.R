@@ -1,0 +1,5 @@
+install.packages("devtools")
+library(devtools)
+install_github("uvima/ineapir")
+install.packages("rmarkdown")
+install.packages("shinydashboard")
