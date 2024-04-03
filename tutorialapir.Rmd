@@ -6,6 +6,8 @@ runtime: shiny_prerendered
 
 ```{r setup, include=FALSE}
 library(learnr)
+library(githubinstall)
+githubinstall("ineapir")
 library(ineapir)
 knitr::opts_chunk$set(echo = FALSE)
 ```
