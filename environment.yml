@@ -5,3 +5,4 @@ dependencies:
   - r-shinydashboard
   - r-learnr
   - r-githubinstall
+  - r-curl
