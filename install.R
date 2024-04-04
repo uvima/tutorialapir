@@ -1,2 +1,0 @@
-library(githubinstall)
-githubinstall("ineapir")
