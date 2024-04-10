@@ -433,7 +433,7 @@ filter <- list(values = c("variación anual" , "variación mensual", "índice ge
 ipc <- get_data_table(idTable = 50902, filter = filter, tip = "A", nlast = 3)
 
 # Tenemos dos filas (series)
- ipc[,c("COD","Nombre")]
+ ipc[,c("COD","Nombre", "Data")]
  
 # La columna Data es una lista de dos dataframes, uno por fila 
  ipc$Data
