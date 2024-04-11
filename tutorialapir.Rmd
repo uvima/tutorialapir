@@ -23,7 +23,7 @@ Por ejemplo, para la tabla [Índices nacionales: general y de grupos ECOICOP](ht
 
 ```{r tabla1, exercise=TRUE, exercise.eval=FALSE}
 tabla <- get_data_table(idTable = 50902, tip = "A")
-head(tabla)
+head(tabla[,c("Nombre","Data")])
 ```
 
 ### Obtener los n últimos datos
@@ -31,7 +31,7 @@ Utilizamos el parámetro nlast. Por ejemplo nlast=5 para obtener los últimos 5 
 
 ```{r tabla2, exercise=TRUE}
 tabla <- get_data_table(idTable = 50902, tip = "A", nlast = 5)
-head(tabla)
+head(tabla[,c("Nombre","Data")])
 ```
 
 La columna Data contiene un dataframe por cada fila con todos los periodos
@@ -44,7 +44,7 @@ tabla$Data[[1]]
 Podemos unir todos los dataframe en uno sólo utilizando el parámetro unnest = TRUE
 ```{r tabla4, exercise=TRUE}
 tabla <- get_data_table(idTable = 50902, tip = "A", nlast = 5, unnest = TRUE)
-head(tabla)
+head(tabla[,c("Nombre","T3_Periodo","Anyo","Valor")], n = 10)
 ```
 
 ### Como filtrar datos de una tabla
@@ -56,21 +56,50 @@ Para poder filtrar es necesario conocer los códigos identificadores numéricos 
 1. Obtener información de las variables y valores
 
 ```{r tabla5, exercise=TRUE}
-metadata <- get_metadata_table_varval(idTable = 50902)
+metadata <- get_metadata_table_varval(idTable = 50913)
 metadata
 ```
 
-2. Construimos el filtro y pedimos los datos. Por ejemplo, para la variación anual ("3" = "74") del índice general ("762" = "304092").
+2. Construimos el filtro y pedimos los datos. Por ejemplo, para la variación anual ("3" = "74") del índice general ("762" = "304092") de Castilla y León ("70" = "9003").
 
 ```{r tabla6, exercise=TRUE}
-filter <- list("3" = "74" ,     # variable id = 3, value id = 74
-               "762" = "304092" # variable id = 762, value id = 304092
+filter <- list("3" = "74" ,      # variable id = 3, valor id = 74
+               "762" = "304092", # variable id = 762, valor id = 304092
+               "70" = "9003"     # variable id = 70, valor id = 9003
                )
 
 # Obtenemos los datos filtrados 
-ipc <- get_data_table(idTable = 50902, filter = filter, unnest = TRUE,
-                      tip = "A", nlast = 5, validate = FALSE)
-ipc
+ipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,
+                      tip = "A", nlast = 2, validate = FALSE)
+ipc[,c("Nombre","T3_Periodo","Anyo","Valor")]
+```
+
+Si no se especifica ningún valor y pasamos un carácter vacío, se obtienen todos los valores de la variable. Por ejemplo, con "70" = "" se obtienen todas las Comunidades Autónomas.
+
+```{r tabla6b, exercise=TRUE}
+filter <- list("3" = "74" ,      # variable id = 3, valor id = 74
+               "762" = "304092", # variable id = 762, valor id = 304092
+               "70" = ""         # variable id = 70, todos los valores
+               )
+
+# Obtenemos los datos filtrados 
+ipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,
+                      tip = "A", nlast = 2, validate = FALSE)
+ipc[,c("Nombre","T3_Periodo","Anyo","Valor")]
+```
+
+También podemos filtrar por varios valores de una misma variable. Por ejemplo, para obtener datos tanto de Castilla y León como del Principado de Asturias ("70" = c("9003", "8999"))
+
+```{r tabla6c, exercise=TRUE}
+filter <- list("3" = "74" ,      # variable id = 3, valor id = 74
+               "762" = "304092", # variable id = 762, valor id = 304092
+               "70" = c("9003", "8999")  # variable id = 70, valores id 9003 y 8999
+               )
+
+# Obtenemos los datos filtrados 
+ipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,
+                      tip = "A", nlast = 2, validate = FALSE)
+ipc[,c("Nombre","T3_Periodo","Anyo","Valor")]
 ```
 
 #### **Tablas pc-axis**
@@ -433,7 +462,7 @@ filter <- list(values = c("variación anual" , "variación mensual", "índice ge
 ipc <- get_data_table(idTable = 50902, filter = filter, tip = "A", nlast = 3)
 
 # Tenemos dos filas (series)
- ipc[,c("COD","Nombre", "Data")]
+ ipc[,c("Nombre", "Data")]
  
 # La columna Data es una lista de dos dataframes, uno por fila 
  ipc$Data
