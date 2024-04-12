@@ -205,7 +205,7 @@ data-pipe="|&gt;">
 
 # Obtenemos los datos filtrados 
 ipc &lt;- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,
-                      tip = &quot;A&quot;, nlast = 2, validate = FALSE)
+                      tip = &quot;A&quot;, nlast = 1, validate = FALSE)
 ipc[,c(&quot;Nombre&quot;,&quot;T3_Periodo&quot;,&quot;Anyo&quot;,&quot;Valor&quot;)]</code></pre>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
@@ -222,7 +222,7 @@ data-pipe="|&gt;">
 
 # Obtenemos los datos filtrados 
 ipc &lt;- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,
-                      tip = &quot;A&quot;, nlast = 2, validate = FALSE)
+                      tip = &quot;A&quot;, nlast = 1, validate = FALSE)
 ipc[,c(&quot;Nombre&quot;,&quot;T3_Periodo&quot;,&quot;Anyo&quot;,&quot;Valor&quot;)]</code></pre>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
@@ -239,7 +239,7 @@ data-pipe="|&gt;">
 
 # Obtenemos los datos filtrados 
 ipc &lt;- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,
-                      tip = &quot;A&quot;, nlast = 2, validate = FALSE)
+                      tip = &quot;A&quot;, nlast = 1, validate = FALSE)
 ipc[,c(&quot;Nombre&quot;,&quot;T3_Periodo&quot;,&quot;Anyo&quot;,&quot;Valor&quot;)]</code></pre>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
@@ -1126,7 +1126,7 @@ learnr:::store_exercise_cache(structure(list(label = "tabla6", global_setup = st
 "remotes::install_github(\"uvima/ineapir\")", "library(ineapir)", 
 "knitr::opts_chunk$set(echo = FALSE)"), chunk_opts = list(label = "setup", 
     include = FALSE)), setup = NULL, chunks = list(list(label = "tabla6", 
-    code = "filter <- list(\"3\" = \"74\" ,      # variable id = 3, valor id = 74\n               \"762\" = \"304092\", # variable id = 762, valor id = 304092\n               \"70\" = \"9003\"     # variable id = 70, valor id = 9003\n               )\n\n# Obtenemos los datos filtrados \nipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,\n                      tip = \"A\", nlast = 2, validate = FALSE)\nipc[,c(\"Nombre\",\"T3_Periodo\",\"Anyo\",\"Valor\")]", 
+    code = "filter <- list(\"3\" = \"74\" ,      # variable id = 3, valor id = 74\n               \"762\" = \"304092\", # variable id = 762, valor id = 304092\n               \"70\" = \"9003\"     # variable id = 70, valor id = 9003\n               )\n\n# Obtenemos los datos filtrados \nipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,\n                      tip = \"A\", nlast = 1, validate = FALSE)\nipc[,c(\"Nombre\",\"T3_Periodo\",\"Anyo\",\"Valor\")]", 
     opts = list(label = "\"tabla6\"", exercise = "TRUE"), engine = "r")), 
     code_check = NULL, error_check = NULL, check = NULL, solution = NULL, 
     tests = NULL, options = list(eval = FALSE, echo = TRUE, results = "markup", 
@@ -1151,7 +1151,7 @@ learnr:::store_exercise_cache(structure(list(label = "tabla6", global_setup = st
         "               \"70\" = \"9003\"     # variable id = 70, valor id = 9003", 
         "               )", "", "# Obtenemos los datos filtrados ", 
         "ipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,", 
-        "                      tip = \"A\", nlast = 2, validate = FALSE)", 
+        "                      tip = \"A\", nlast = 1, validate = FALSE)", 
         "ipc[,c(\"Nombre\",\"T3_Periodo\",\"Anyo\",\"Valor\")]"
         ), out.width.px = 624, out.height.px = 384, params.src = "tabla6, exercise=TRUE", 
         fig.num = 0, exercise.df_print = "paged", exercise.checker = "NULL"), 
@@ -1172,7 +1172,7 @@ learnr:::store_exercise_cache(structure(list(label = "tabla6b", global_setup = s
 "remotes::install_github(\"uvima/ineapir\")", "library(ineapir)", 
 "knitr::opts_chunk$set(echo = FALSE)"), chunk_opts = list(label = "setup", 
     include = FALSE)), setup = NULL, chunks = list(list(label = "tabla6b", 
-    code = "filter <- list(\"3\" = \"74\" ,      # variable id = 3, valor id = 74\n               \"762\" = \"304092\", # variable id = 762, valor id = 304092\n               \"70\" = \"\"         # variable id = 70, todos los valores\n               )\n\n# Obtenemos los datos filtrados \nipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,\n                      tip = \"A\", nlast = 2, validate = FALSE)\nipc[,c(\"Nombre\",\"T3_Periodo\",\"Anyo\",\"Valor\")]", 
+    code = "filter <- list(\"3\" = \"74\" ,      # variable id = 3, valor id = 74\n               \"762\" = \"304092\", # variable id = 762, valor id = 304092\n               \"70\" = \"\"         # variable id = 70, todos los valores\n               )\n\n# Obtenemos los datos filtrados \nipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,\n                      tip = \"A\", nlast = 1, validate = FALSE)\nipc[,c(\"Nombre\",\"T3_Periodo\",\"Anyo\",\"Valor\")]", 
     opts = list(label = "\"tabla6b\"", exercise = "TRUE"), engine = "r")), 
     code_check = NULL, error_check = NULL, check = NULL, solution = NULL, 
     tests = NULL, options = list(eval = FALSE, echo = TRUE, results = "markup", 
@@ -1197,7 +1197,7 @@ learnr:::store_exercise_cache(structure(list(label = "tabla6b", global_setup = s
         "               \"70\" = \"\"         # variable id = 70, todos los valores", 
         "               )", "", "# Obtenemos los datos filtrados ", 
         "ipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,", 
-        "                      tip = \"A\", nlast = 2, validate = FALSE)", 
+        "                      tip = \"A\", nlast = 1, validate = FALSE)", 
         "ipc[,c(\"Nombre\",\"T3_Periodo\",\"Anyo\",\"Valor\")]"
         ), out.width.px = 624, out.height.px = 384, params.src = "tabla6b, exercise=TRUE", 
         fig.num = 0, exercise.df_print = "paged", exercise.checker = "NULL"), 
@@ -1218,7 +1218,7 @@ learnr:::store_exercise_cache(structure(list(label = "tabla6c", global_setup = s
 "remotes::install_github(\"uvima/ineapir\")", "library(ineapir)", 
 "knitr::opts_chunk$set(echo = FALSE)"), chunk_opts = list(label = "setup", 
     include = FALSE)), setup = NULL, chunks = list(list(label = "tabla6c", 
-    code = "filter <- list(\"3\" = \"74\" ,      # variable id = 3, valor id = 74\n               \"762\" = \"304092\", # variable id = 762, valor id = 304092\n               \"70\" = c(\"9003\", \"8999\")  # variable id = 70, valores id 9003 y 8999\n               )\n\n# Obtenemos los datos filtrados \nipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,\n                      tip = \"A\", nlast = 2, validate = FALSE)\nipc[,c(\"Nombre\",\"T3_Periodo\",\"Anyo\",\"Valor\")]", 
+    code = "filter <- list(\"3\" = \"74\" ,      # variable id = 3, valor id = 74\n               \"762\" = \"304092\", # variable id = 762, valor id = 304092\n               \"70\" = c(\"9003\", \"8999\")  # variable id = 70, valores id 9003 y 8999\n               )\n\n# Obtenemos los datos filtrados \nipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,\n                      tip = \"A\", nlast = 1, validate = FALSE)\nipc[,c(\"Nombre\",\"T3_Periodo\",\"Anyo\",\"Valor\")]", 
     opts = list(label = "\"tabla6c\"", exercise = "TRUE"), engine = "r")), 
     code_check = NULL, error_check = NULL, check = NULL, solution = NULL, 
     tests = NULL, options = list(eval = FALSE, echo = TRUE, results = "markup", 
@@ -1243,7 +1243,7 @@ learnr:::store_exercise_cache(structure(list(label = "tabla6c", global_setup = s
         "               \"70\" = c(\"9003\", \"8999\")  # variable id = 70, valores id 9003 y 8999", 
         "               )", "", "# Obtenemos los datos filtrados ", 
         "ipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,", 
-        "                      tip = \"A\", nlast = 2, validate = FALSE)", 
+        "                      tip = \"A\", nlast = 1, validate = FALSE)", 
         "ipc[,c(\"Nombre\",\"T3_Periodo\",\"Anyo\",\"Valor\")]"
         ), out.width.px = 624, out.height.px = 384, params.src = "tabla6c, exercise=TRUE", 
         fig.num = 0, exercise.df_print = "paged", exercise.checker = "NULL"), 

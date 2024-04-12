@@ -70,7 +70,7 @@ filter <- list("3" = "74" ,      # variable id = 3, valor id = 74
 
 # Obtenemos los datos filtrados 
 ipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,
-                      tip = "A", nlast = 2, validate = FALSE)
+                      tip = "A", nlast = 1, validate = FALSE)
 ipc[,c("Nombre","T3_Periodo","Anyo","Valor")]
 ```
 
@@ -84,7 +84,7 @@ filter <- list("3" = "74" ,      # variable id = 3, valor id = 74
 
 # Obtenemos los datos filtrados 
 ipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,
-                      tip = "A", nlast = 2, validate = FALSE)
+                      tip = "A", nlast = 1, validate = FALSE)
 ipc[,c("Nombre","T3_Periodo","Anyo","Valor")]
 ```
 
@@ -98,7 +98,7 @@ filter <- list("3" = "74" ,      # variable id = 3, valor id = 74
 
 # Obtenemos los datos filtrados 
 ipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,
-                      tip = "A", nlast = 2, validate = FALSE)
+                      tip = "A", nlast = 1, validate = FALSE)
 ipc[,c("Nombre","T3_Periodo","Anyo","Valor")]
 ```
 
