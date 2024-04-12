@@ -53,11 +53,11 @@ Cuando realizamos una petición de datos de una tabla existe la posibilidad de f
 #### **Tablas Tempus 3**
 Para poder filtrar es necesario conocer los códigos identificadores numéricos (Id) de las variables y los valores por los que queremos filtrar. Por lo tanto, debemos hacer lo siguiente:
 
-1. Obtener información de las variables y valores
+1. Obtener información de las variables y valores de la tabla de interés, por ejemplo [Índices por comunidades autónomas: general y de grupos ECOICOP](https://www.ine.es/jaxiT3/Tabla.htm?t=50913) (Id = 50913).
 
 ```{r tabla5, exercise=TRUE}
 metadata <- get_metadata_table_varval(idTable = 50913)
-metadata
+metadata[,c("Nombre","Id","Fk_Variable")]
 ```
 
 2. Construimos el filtro y pedimos los datos. Por ejemplo, para la variación anual ("3" = "74") del índice general ("762" = "304092") de Castilla y León ("70" = "9003").

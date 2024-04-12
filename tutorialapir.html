@@ -177,13 +177,17 @@ tpx).</p>
 numéricos (Id) de las variables y los valores por los que queremos
 filtrar. Por lo tanto, debemos hacer lo siguiente:</p>
 <ol style="list-style-type: decimal">
-<li>Obtener información de las variables y valores</li>
+<li>Obtener información de las variables y valores de la tabla de
+interés, por ejemplo <a
+href="https://www.ine.es/jaxiT3/Tabla.htm?t=50913">Índices por
+comunidades autónomas: general y de grupos ECOICOP</a> (Id =
+50913).</li>
 </ol>
 <div class="tutorial-exercise" data-label="tabla5" data-completion="1"
 data-diagnostics="1" data-startover="1" data-lines="0"
 data-pipe="|&gt;">
 <pre class="text"><code>metadata &lt;- get_metadata_table_varval(idTable = 50913)
-metadata</code></pre>
+metadata[,c(&quot;Nombre&quot;,&quot;Id&quot;,&quot;Fk_Variable&quot;)]</code></pre>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
 <ol start="2" style="list-style-type: decimal">
@@ -1081,7 +1085,7 @@ learnr:::store_exercise_cache(structure(list(label = "tabla5", global_setup = st
 "remotes::install_github(\"uvima/ineapir\")", "library(ineapir)", 
 "knitr::opts_chunk$set(echo = FALSE)"), chunk_opts = list(label = "setup", 
     include = FALSE)), setup = NULL, chunks = list(list(label = "tabla5", 
-    code = "metadata <- get_metadata_table_varval(idTable = 50913)\nmetadata", 
+    code = "metadata <- get_metadata_table_varval(idTable = 50913)\nmetadata[,c(\"Nombre\",\"Id\",\"Fk_Variable\")]", 
     opts = list(label = "\"tabla5\"", exercise = "TRUE"), engine = "r")), 
     code_check = NULL, error_check = NULL, check = NULL, solution = NULL, 
     tests = NULL, options = list(eval = FALSE, echo = TRUE, results = "markup", 
@@ -1102,10 +1106,11 @@ learnr:::store_exercise_cache(structure(list(label = "tabla5", global_setup = st
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
         max.print = 1000, label = "tabla5", exercise = TRUE, 
         code = c("metadata <- get_metadata_table_varval(idTable = 50913)", 
-        "metadata"), out.width.px = 624, out.height.px = 384, 
-        params.src = "tabla5, exercise=TRUE", fig.num = 0, exercise.df_print = "paged", 
-        exercise.checker = "NULL"), engine = "r", version = "4"), class = c("r", 
-"tutorial_exercise")))
+        "metadata[,c(\"Nombre\",\"Id\",\"Fk_Variable\")]"), out.width.px = 624, 
+        out.height.px = 384, params.src = "tabla5, exercise=TRUE", 
+        fig.num = 0, exercise.df_print = "paged", exercise.checker = "NULL"), 
+    engine = "r", version = "4"), class = c("r", "tutorial_exercise"
+)))
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
