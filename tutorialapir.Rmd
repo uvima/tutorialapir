@@ -181,6 +181,117 @@ explotaciones <- get_data_table(idTable = 52056, unnest = TRUE, tip = "A",
 explotaciones
 ```
 
+### Como filtrar datos de una tabla utilizando literales de los valores
+En lugar de filtrar por códigos numéricos identificadores de variables y valores, es posible
+hacerlo utilizando literales de valores. No obstante, para una mejor respuesta se recomienda el uso de
+los códigos numéricos. Para ello, existen disponibles las siguientes etiquetas predefinidas, las cuales se corresponden con una variable en particular:
+
+|Etiqueta | Variable ID | Comentario|
+|---------|----|--------|
+|nac             | 349 | Nacional|
+|ccaa            | 70  | Comunidades Autónomas |
+|prov            | 115 | Provincias |
+|mun             | 19  | Municipios |
+|isla            | 20  | Islas |
+|grupo           | 762 | Grupos IPC |
+|subgrupo        | 763 | Subgrupos IPC |
+|clase           | 764 | Clases IPC |
+|subclase        | 765 | Subclases IPC |
+|rubrica         | 270 | Rúbricas IPC |
+|grupoespecial   | 269 | Grupos especiales IPC |
+|tipodato        | 3   | Tipo de dato |
+|sexo            | 18  | Sexo |
+|edad1           | 355 | Valores simples de edad |
+|edadt           | 356 | Totales de edad |
+|edadg           | 360 | Grupos de edad |
+|edads           | 357 | Semiintervalos de edad |
+|edad            |355, 356, 357, 360 | Edad |
+|generacion      | 612 | Generación/edades |
+|nacionalidad    | 141 | Nacionalidad |
+|paisnacimiento  | 431, 432 | País de nacimiendo |
+|lugarnacimiento | 97  | Lugar de nacimietno |
+|efectoscorr     | 544 | Corrección de efectos |
+|values          | -    | Contenedor de valores |
+
+#### Ejemplo 1
+Por ejemplo, para la tabla [Índices nacionales: general y de grupos ECOICOP](https://www.ine.es/jaxiT3/Tabla.htm?t=50902) (Id 50902)
+
+
+```{r tabla13, exercise=TRUE}
+# Definimos el filtro utilizando etiquetas
+filter <- list(tipodato = "variación anual" , # variable id = 3
+               grupo = "índice general"       # variable id = 762
+               )
+
+# Obtenemos los datos de la tabla
+ipc <- get_data_table(idTable = 50902, filter = filter, unnest = TRUE,
+                      tip = "A", nlast = 5, validate = FALSE)
+
+ipc[,c("Nombre","T3_Periodo","Anyo","Valor")]
+```
+
+Si utilizamos el contenedor *values*, podemos especificar los literales de los valores
+en el mismo vector en lugar de con etiquetas diferentes:
+
+```{r tabla14, exercise=TRUE}
+# Definimos el filtro con el contenedor values
+filter <- list(values = c("variación anual" , "índice general"))
+
+# Obtenemos los datos de la tabla
+ipc <- get_data_table(idTable = 50902, filter = filter, unnest = TRUE,
+                      tip = "A", nlast = 5, validate = FALSE)
+
+ipc[,c("Nombre","T3_Periodo","Anyo","Valor")]
+```
+
+
+#### Ejemplo 3
+Por ejemplo, para la tabla [Población residente por fecha, sexo, grupo de edad y nacionalidad](https://www.ine.es/jaxiT3/Tabla.htm?t=56936) (Id 56936)
+
+```{r tabla16, exercise=TRUE}
+# Definimos el filtro utilizando etiquetas
+filter <- list(nacionalidad = "total",
+               sexo = c("hombres", "mujeres"),
+               edad = "todas las edades")
+
+
+# Obtenemos los datos de la tabla
+poblacion <- get_data_table(idTable = 56936, filter = filter, unnest = TRUE,
+                      tip = "A", nlast = 1, validate = FALSE)
+
+poblacion[,c("Nombre","T3_Periodo","Anyo","Valor")]
+```
+
+Utilizando el contenedor *values* definiríamos el filtro de la siguiente forma:
+
+```{r tabla17, exercise=TRUE}
+# Definimos el filtro utilizando etiquetas
+filter <- list(nacionalidad = "total",
+               values = c("hombres", "mujeres", "todas las edades"))
+
+# Obtenemos los datos de la tabla
+poblacion <- get_data_table(idTable = 56936, filter = filter, unnest = TRUE,
+                      tip = "A", nlast = 1, validate = FALSE)
+
+poblacion[,c("Nombre","T3_Periodo","Anyo","Valor")]
+```
+
+#### Ejemplo 3
+Por ejemplo, para la tabla [PIB pm Oferta (Indices de volumen encadenado)](https://www.ine.es/jaxiT3/Tabla.htm?t=30679) (Id 30679). Podemos
+utilizar el contenedor *values* aunque no existan etiquetas predefinidas que 
+se correspondan con las variables de la tabla.
+
+```{r tabla15, exercise=TRUE}
+# Definimos el filtro utilizando etiquetas
+filter <- list(values = c("producto interior", "datos ajustados", "variación anual"))
+
+
+# Obtenemos los datos de la tabla
+pib <- get_data_table(idTable = 30679, filter = filter, unnest = TRUE,
+                      tip = "A", nlast = 5, validate = FALSE)
+
+pib[,c("Nombre","T3_Periodo","Anyo","Valor")]
+```
 
 ## Otros casos de uso
 ### Obtener datos de una serie
@@ -498,3 +609,18 @@ poblacion <- get_data_table(idTable = 56936, filter = filter, validate = FALSE,
 head(poblacion)
 ```
 
+### Filtrando con expresiones regulares
+Cuando se utilizan las etiquetas predefinidas para filtrar utilizando literales
+de los valores, podemos incluir expresiones regulares.
+Por ejemplo, para la tabla [Población residente por fecha, sexo y edad (desde 1971)](https://www.ine.es/jaxiT3/Tabla.htm?t=56934) (Id 56934)
+
+```{r expreg, exercise=TRUE}
+# Difinimos un filtro con una expresión regular para edades entre 20 y 25 años
+filter <- list(sexo = "total", edad = "2[0-5]+")
+
+# Obtenemos los datos
+poblacion <- get_data_table(idTable = 56934, filter = filter, tip = "A", nlast = 1,
+                      unnest = TRUE, validate = FALSE)
+
+poblacion[,c("Nombre", "Anyo", "Valor")]
+```
