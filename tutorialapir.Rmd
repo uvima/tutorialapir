@@ -13,9 +13,9 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 ## Obtener datos de una tabla
-Para obtener los datos de una tabla es necesario conocer su código identificativo (vea [códigos identificadores de tablas y series](https://uvima.github.io/datalab/api-json/codigos_identificadores.html)).
+Para obtener los datos de una tabla es necesario conocer su código identificativo (vea [códigos identificadores de tablas y series](https://es-ine.github.io/datalab/api-json/codigos_identificadores.html)).
 
-Una vez se conoce el código de la tabla de interés, se puede utilizar la función [get_data_table()](https://uvima.github.io/ineapir/reference/get_data_table.html) para obtener los datos asociados.
+Una vez se conoce el código de la tabla de interés, se puede utilizar la función [get_data_table()](https://es-ine.github.io/ineapir/reference/get_data_table.html) para obtener los datos asociados.
 
 ### Obtener todos los datos de la tabla
 Por ejemplo, para la tabla [Índices nacionales: general y de grupos ECOICOP](https://www.ine.es/jaxiT3/Tabla.htm?t=50902) (Id 50902):
@@ -70,7 +70,7 @@ filter <- list("3" = "74" ,      # variable id = 3, valor id = 74
 
 # Obtenemos los datos filtrados 
 ipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,
-                      tip = "A", nlast = 1, validate = FALSE)
+                      tip = "A", nlast = 2, validate = FALSE)
 ipc[,c("Nombre","T3_Periodo","Anyo","Valor")]
 ```
 
@@ -84,7 +84,7 @@ filter <- list("3" = "74" ,      # variable id = 3, valor id = 74
 
 # Obtenemos los datos filtrados 
 ipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,
-                      tip = "A", nlast = 1, validate = FALSE)
+                      tip = "A", nlast = 2, validate = FALSE)
 ipc[,c("Nombre","T3_Periodo","Anyo","Valor")]
 ```
 
@@ -98,7 +98,7 @@ filter <- list("3" = "74" ,      # variable id = 3, valor id = 74
 
 # Obtenemos los datos filtrados 
 ipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,
-                      tip = "A", nlast = 1, validate = FALSE)
+                      tip = "A", nlast = 2, validate = FALSE)
 ipc[,c("Nombre","T3_Periodo","Anyo","Valor")]
 ```
 
@@ -156,7 +156,7 @@ materiales
 
 Existen tablas tpx que contienen códigos identificadores de Tempus 3 ([Censo agrario 2020](https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736176851&menu=resultados&idp=1254735727106)). En este caso además de filtrar usando los códigos alfanuméricos, como para una tabla tpx normal, también se puede filtrar utilizando los códigos numéricos Tempus 3 de las variables y los valores. Para ello, debemos hacer lo siguiente:
 
-1.  Pedir lo metadatos de las series que conforman la tabla de interés [Mano de obra en la explotación, familiar y contratada de manera regular, por relación con el titular, porcentaje de unidad de trabajo-año total (UTAT) y sexo](https://www.ine.es/jaxi/Tabla.htm?tpx=52056&L=0) (Id=52056). A la función [get_metadata_table_varval()](https://uvima.github.io/ineapir/reference/get_metadata_table_varval.html) también le podemos pasar un filtro (útil para tablas con un gran número de series debido a una gran segmentación territorial), por ejemplo total nacional (NAC = "00"):
+1.  Pedir lo metadatos de las series que conforman la tabla de interés [Mano de obra en la explotación, familiar y contratada de manera regular, por relación con el titular, porcentaje de unidad de trabajo-año total (UTAT) y sexo](https://www.ine.es/jaxi/Tabla.htm?tpx=52056&L=0) (Id=52056). A la función [get_metadata_table_varval()](https://es-ine.github.io/ineapir/reference/get_metadata_table_varval.html) también le podemos pasar un filtro (útil para tablas con un gran número de series debido a una gran segmentación territorial), por ejemplo total nacional (NAC = "00"):
 
 ```{r tabla11, exercise=TRUE}
 metadata <- get_metadata_table_varval(idTable = 52056,
@@ -298,7 +298,7 @@ pib[,c("Nombre","T3_Periodo","Anyo","Valor")]
 
 Para obtener los datos de una única serie es necesario conocer su código identificativo (vea códigos identificativos de tablas y series).
 
-Una vez se conoce el código de la serie de interés, se puede utilizar la función [get_data_series()](https://uvima.github.io/ineapir/reference/get_data_series.html) para obtener los datos de interés.
+Una vez se conoce el código de la serie de interés, se puede utilizar la función [get_data_series()](https://es-ine.github.io/ineapir/reference/get_data_series.html) para obtener los datos de interés.
 
 #### **Obtener el último periodo de una serie**
 Por ejemplo, para la serie con código [IPC251856](https://www.ine.es/consul/serie.do?s=IPC251856)
@@ -334,7 +334,7 @@ series
 
 ### Consultar operaciones estadísticas
 
-La base de datos Tempus3 contiene la información de todas las operaciones estadísticas coyunturales del INE, aquellas cuya periodicidad de difusión de resultados es inferior al año, además de algunas operaciones estadísticas estructurales. La relación de operaciones en Tempus3 cambia a medida que se van integrando en la base de datos. Puede consultarse la lista de operaciones disponibles en cualquier momento con las funciones [get_metadata_operations()](https://uvima.github.io/ineapir/reference/get_metadata_operations.html)
+La base de datos Tempus3 contiene la información de todas las operaciones estadísticas coyunturales del INE, aquellas cuya periodicidad de difusión de resultados es inferior al año, además de algunas operaciones estadísticas estructurales. La relación de operaciones en Tempus3 cambia a medida que se van integrando en la base de datos. Puede consultarse la lista de operaciones disponibles en cualquier momento con las funciones [get_metadata_operations()](https://es-ine.github.io/ineapir/reference/get_metadata_operations.html)
 
 #### **Obtener las operaciones estadísticas disponibles del sistema**
 
@@ -356,7 +356,7 @@ as.data.frame(operation)
 
 ### Consultar variables
 
-Se pueden obtener las variables del Sistema utilizando la función [get_metadata_variables()](https://uvima.github.io/ineapir/reference/get_metadata_variables.html).
+Se pueden obtener las variables del Sistema utilizando la función [get_metadata_variables()](https://es-ine.github.io/ineapir/reference/get_metadata_variables.html).
 
 #### **Obtener todas las variables del sistema**
 
@@ -375,7 +375,7 @@ variables
 ```
 
 ### Consultar valores de variables
-Se pueden obtener los valores de una variable utilizando la función [get_metadata_values()](https://uvima.github.io/ineapir/reference/get_metadata_values.html).
+Se pueden obtener los valores de una variable utilizando la función [get_metadata_values()](https://es-ine.github.io/ineapir/reference/get_metadata_values.html).
 
 #### **Obtener todos los valores de una variable**
 Por ejemplo, de la variable Provincias (Id=115)
@@ -394,7 +394,7 @@ values
 ```
 
 ### Obtener información de tablas
-En lo que se refiere a las tablas, se puede obtener un listado de las tablas de una operación con la función [get_metadata_tables_operation()](https://uvima.github.io/ineapir/reference/get_metadata_tables_operation.html) y también las variables y valores que la definen con las funciones [get_metadata_table_groups()](https://uvima.github.io/ineapir/reference/get_metadata_table_groups.html) y [get_meteadata_table_values()](https://uvima.github.io/ineapir/reference/get_metadata_table_values.html).
+En lo que se refiere a las tablas, se puede obtener un listado de las tablas de una operación con la función [get_metadata_tables_operation()](https://es-ine.github.io/ineapir/reference/get_metadata_tables_operation.html) y también las variables y valores que la definen con las funciones [get_metadata_table_groups()](https://es-ine.github.io/ineapir/reference/get_metadata_table_groups.html) y [get_metadata_table_values()](https://es-ine.github.io/ineapir/reference/get_metadata_table_values.html).
 
 #### **Obtener todas las tablas de una operación**
 Por ejemplo, el listado de tablas de la operación estadística IPC (IOE30138 / IPC / 25)
@@ -422,7 +422,7 @@ values <- get_metadata_table_values(idTable = 50913, idGroup = 110924)
 values
 ```
 
-Alternativamente, podemos utilizar la función [get_metadata_table_varval()](https://uvima.github.io/ineapir/reference/get_metadata_table_varval.html) en un sólo paso.
+Alternativamente, podemos utilizar la función [get_metadata_table_varval()](https://es-ine.github.io/ineapir/reference/get_metadata_table_varval.html) en un sólo paso.
 
 ```{r infotab4, exercise=TRUE}
 values <- get_metadata_table_varval(idTable = 50913)
@@ -430,7 +430,7 @@ values
 ```
 
 ### Obtener información de series
-En lo que se refiere a las series, se puede obtener información de una serie con la función [get_metadata_series()](https://uvima.github.io/ineapir/reference/get_metadata_series.html), así como de las variables y valores que la definen con la función [get_metadata_series_values()](https://uvima.github.io/ineapir/reference/get_metadata_series_values.html). Además, también se puede obtener un listado de las series de una tabla con la función [get_metadata_series_table()](https://uvima.github.io/ineapir/reference/get_metadata_series_table.html) y un listado de las series de una operación [get_metadata_series_operation(()](https://uvima.github.io/ineapir/reference/get_metadata_series_operation.html).
+En lo que se refiere a las series, se puede obtener información de una serie con la función [get_metadata_series()](https://es-ine.github.io/ineapir/reference/get_metadata_series.html), así como de las variables y valores que la definen con la función [get_metadata_series_values()](https://es-ine.github.io/ineapir/reference/get_metadata_series_values.html). Además, también se puede obtener un listado de las series de una tabla con la función [get_metadata_series_table()](https://es-ine.github.io/ineapir/reference/get_metadata_series_table.html) y un listado de las series de una operación [get_metadata_series_operation()](https://es-ine.github.io/ineapir/reference/get_metadata_series_operation.html).
 
 #### **Obtener información de una serie**
 Por ejemplo, de la serie que recoge los datos del índice general del IPC ([IPC251852](https://www.ine.es/consul/serie.do?s=IPC251852)) que recoge la variación mensual del Índice de precios de consumo
@@ -485,7 +485,7 @@ head(series)
 
 ### Consultar publicaciones
 
-Se puede obtener un listado de las todas las publicaciones del sistema con la función [get_metadata_publications()](https://uvima.github.io/ineapir/reference/get_metadata_publications.html). Además, también se pueden consultar las fechas de publicación de una publicación en particular con la función [get_metadata_publication_dates()](https://uvima.github.io/ineapir/reference/get_metadata_publication_dates.html).
+Se puede obtener un listado de las todas las publicaciones del sistema con la función [get_metadata_publications()](https://es-ine.github.io/ineapir/reference/get_metadata_publications.html). Además, también se pueden consultar las fechas de publicación de una publicación en particular con la función [get_metadata_publication_dates()](https://es-ine.github.io/ineapir/reference/get_metadata_publication_dates.html).
 
 #### **Obtener el litado de todas las publicaciones**
 
@@ -531,28 +531,30 @@ variables <- get_metadata_variables(operation = "IPC", verbose = TRUE,
 Es útil cuando estamos utilizando un filtro y estamos seguros de los ids utilizados para variables y valores. Desactivar la validación significa hacer menos llamadas de verificación a la API.
 
 ```{r validate_2, exercise=TRUE}
-# The filter 
-filter <- list("115" = "2",     # variable id = 115, value id = 2
-               "3" = "74" ,     # variable id = 3, value id = 74
-               "762" = "304092" # variable id = 762, value id = 304092
+filter <- list("3" = "74" ,      # variable id = 3, valor id = 74
+               "762" = "304092", # variable id = 762, valor id = 304092
+               "70" = "9003"     # variable id = 70, valor id = 9003
                )
 
 # Con verbose = TRUE and validate = TRUE
-ipc <- get_data_series_filter(operation = "IPC", filter = filter, periodicity = 1,
-                       verbose = TRUE)
+ipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,
+                      tip = "A", nlast = 2, verbose = TRUE, validate = TRUE)
+ipc[,c("Nombre","T3_Periodo","Anyo","Valor")]
 ```
 
 ```{r validate_3, exercise=TRUE}
-# The filter 
-filter <- list("115" = "2",     # variable id = 115, value id = 2
-               "3" = "74" ,     # variable id = 3, value id = 74
-               "762" = "304092" # variable id = 762, value id = 304092
+filter <- list("3" = "74" ,      # variable id = 3, valor id = 74
+               "762" = "304092", # variable id = 762, valor id = 304092
+               "70" = "9003"     # variable id = 70, valor id = 9003
                )
 
 # Con verbose = TRUE and validate = FALSE
-ipc <- get_data_series_filter(operation = "IPC", filter = filter, periodicity = 1,
-                       verbose = TRUE, validate = FALSE)
+ipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,
+                      tip = "A", nlast = 2, verbose = TRUE, validate = FALSE)
+ipc[,c("Nombre","T3_Periodo","Anyo","Valor")]
 ```
+
+
 
 ### Parámetro `lang`
 Es posible obtener información en Inglés utilizando el parámetro `lang = "EN"` en algunas funciones.

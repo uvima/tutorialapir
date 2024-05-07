@@ -113,11 +113,11 @@ if (window.hljs) {
 <h2>Obtener datos de una tabla</h2>
 <p>Para obtener los datos de una tabla es necesario conocer su código
 identificativo (vea <a
-href="https://uvima.github.io/datalab/api-json/codigos_identificadores.html">códigos
+href="https://es-ine.github.io/datalab/api-json/codigos_identificadores.html">códigos
 identificadores de tablas y series</a>).</p>
 <p>Una vez se conoce el código de la tabla de interés, se puede utilizar
 la función <a
-href="https://uvima.github.io/ineapir/reference/get_data_table.html">get_data_table()</a>
+href="https://es-ine.github.io/ineapir/reference/get_data_table.html">get_data_table()</a>
 para obtener los datos asociados.</p>
 <div id="section-obtener-todos-los-datos-de-la-tabla"
 class="section level3">
@@ -205,7 +205,7 @@ data-pipe="|&gt;">
 
 # Obtenemos los datos filtrados 
 ipc &lt;- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,
-                      tip = &quot;A&quot;, nlast = 1, validate = FALSE)
+                      tip = &quot;A&quot;, nlast = 2, validate = FALSE)
 ipc[,c(&quot;Nombre&quot;,&quot;T3_Periodo&quot;,&quot;Anyo&quot;,&quot;Valor&quot;)]</code></pre>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
@@ -222,7 +222,7 @@ data-pipe="|&gt;">
 
 # Obtenemos los datos filtrados 
 ipc &lt;- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,
-                      tip = &quot;A&quot;, nlast = 1, validate = FALSE)
+                      tip = &quot;A&quot;, nlast = 2, validate = FALSE)
 ipc[,c(&quot;Nombre&quot;,&quot;T3_Periodo&quot;,&quot;Anyo&quot;,&quot;Valor&quot;)]</code></pre>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
@@ -239,7 +239,7 @@ data-pipe="|&gt;">
 
 # Obtenemos los datos filtrados 
 ipc &lt;- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,
-                      tip = &quot;A&quot;, nlast = 1, validate = FALSE)
+                      tip = &quot;A&quot;, nlast = 2, validate = FALSE)
 ipc[,c(&quot;Nombre&quot;,&quot;T3_Periodo&quot;,&quot;Anyo&quot;,&quot;Valor&quot;)]</code></pre>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
@@ -336,7 +336,7 @@ valores. Para ello, debemos hacer lo siguiente:</p>
 obra en la explotación, familiar y contratada de manera regular, por
 relación con el titular, porcentaje de unidad de trabajo-año total
 (UTAT) y sexo</a> (Id=52056). A la función <a
-href="https://uvima.github.io/ineapir/reference/get_metadata_table_varval.html">get_metadata_table_varval()</a>
+href="https://es-ine.github.io/ineapir/reference/get_metadata_table_varval.html">get_metadata_table_varval()</a>
 también le podemos pasar un filtro (útil para tablas con un gran número
 de series debido a una gran segmentación territorial), por ejemplo total
 nacional (NAC = “00”):</li>
@@ -626,7 +626,7 @@ código identificativo (vea códigos identificativos de tablas y
 series).</p>
 <p>Una vez se conoce el código de la serie de interés, se puede utilizar
 la función <a
-href="https://uvima.github.io/ineapir/reference/get_data_series.html">get_data_series()</a>
+href="https://es-ine.github.io/ineapir/reference/get_data_series.html">get_data_series()</a>
 para obtener los datos de interés.</p>
 <div id="section-obtener-el-último-periodo-de-una-serie"
 class="section level4">
@@ -688,7 +688,7 @@ algunas operaciones estadísticas estructurales. La relación de
 operaciones en Tempus3 cambia a medida que se van integrando en la base
 de datos. Puede consultarse la lista de operaciones disponibles en
 cualquier momento con las funciones <a
-href="https://uvima.github.io/ineapir/reference/get_metadata_operations.html">get_metadata_operations()</a></p>
+href="https://es-ine.github.io/ineapir/reference/get_metadata_operations.html">get_metadata_operations()</a></p>
 <div
 id="section-obtener-las-operaciones-estadísticas-disponibles-del-sistema"
 class="section level4">
@@ -719,7 +719,7 @@ as.data.frame(operation)</code></pre>
 <div id="section-consultar-variables" class="section level3">
 <h3>Consultar variables</h3>
 <p>Se pueden obtener las variables del Sistema utilizando la función <a
-href="https://uvima.github.io/ineapir/reference/get_metadata_variables.html">get_metadata_variables()</a>.</p>
+href="https://es-ine.github.io/ineapir/reference/get_metadata_variables.html">get_metadata_variables()</a>.</p>
 <div id="section-obtener-todas-las-variables-del-sistema"
 class="section level4">
 <h4><strong>Obtener todas las variables del sistema</strong></h4>
@@ -748,7 +748,7 @@ variables</code></pre>
 <h3>Consultar valores de variables</h3>
 <p>Se pueden obtener los valores de una variable utilizando la función
 <a
-href="https://uvima.github.io/ineapir/reference/get_metadata_values.html">get_metadata_values()</a>.</p>
+href="https://es-ine.github.io/ineapir/reference/get_metadata_values.html">get_metadata_values()</a>.</p>
 <div id="section-obtener-todos-los-valores-de-una-variable"
 class="section level4">
 <h4><strong>Obtener todos los valores de una variable</strong></h4>
@@ -781,11 +781,11 @@ values</code></pre>
 <h3>Obtener información de tablas</h3>
 <p>En lo que se refiere a las tablas, se puede obtener un listado de las
 tablas de una operación con la función <a
-href="https://uvima.github.io/ineapir/reference/get_metadata_tables_operation.html">get_metadata_tables_operation()</a>
+href="https://es-ine.github.io/ineapir/reference/get_metadata_tables_operation.html">get_metadata_tables_operation()</a>
 y también las variables y valores que la definen con las funciones <a
-href="https://uvima.github.io/ineapir/reference/get_metadata_table_groups.html">get_metadata_table_groups()</a>
+href="https://es-ine.github.io/ineapir/reference/get_metadata_table_groups.html">get_metadata_table_groups()</a>
 y <a
-href="https://uvima.github.io/ineapir/reference/get_metadata_table_values.html">get_meteadata_table_values()</a>.</p>
+href="https://es-ine.github.io/ineapir/reference/get_metadata_table_values.html">get_metadata_table_values()</a>.</p>
 <div id="section-obtener-todas-las-tablas-de-una-operación"
 class="section level4">
 <h4><strong>Obtener todas las tablas de una operación</strong></h4>
@@ -835,7 +835,7 @@ values</code></pre>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
 <p>Alternativamente, podemos utilizar la función <a
-href="https://uvima.github.io/ineapir/reference/get_metadata_table_varval.html">get_metadata_table_varval()</a>
+href="https://es-ine.github.io/ineapir/reference/get_metadata_table_varval.html">get_metadata_table_varval()</a>
 en un sólo paso.</p>
 <div class="tutorial-exercise" data-label="infotab4" data-completion="1"
 data-diagnostics="1" data-startover="1" data-lines="0"
@@ -850,14 +850,14 @@ values</code></pre>
 <h3>Obtener información de series</h3>
 <p>En lo que se refiere a las series, se puede obtener información de
 una serie con la función <a
-href="https://uvima.github.io/ineapir/reference/get_metadata_series.html">get_metadata_series()</a>,
+href="https://es-ine.github.io/ineapir/reference/get_metadata_series.html">get_metadata_series()</a>,
 así como de las variables y valores que la definen con la función <a
-href="https://uvima.github.io/ineapir/reference/get_metadata_series_values.html">get_metadata_series_values()</a>.
+href="https://es-ine.github.io/ineapir/reference/get_metadata_series_values.html">get_metadata_series_values()</a>.
 Además, también se puede obtener un listado de las series de una tabla
 con la función <a
-href="https://uvima.github.io/ineapir/reference/get_metadata_series_table.html">get_metadata_series_table()</a>
+href="https://es-ine.github.io/ineapir/reference/get_metadata_series_table.html">get_metadata_series_table()</a>
 y un listado de las series de una operación <a
-href="https://uvima.github.io/ineapir/reference/get_metadata_series_operation.html">get_metadata_series_operation(()</a>.</p>
+href="https://es-ine.github.io/ineapir/reference/get_metadata_series_operation.html">get_metadata_series_operation()</a>.</p>
 <div id="section-obtener-información-de-una-serie"
 class="section level4">
 <h4><strong>Obtener información de una serie</strong></h4>
@@ -945,10 +945,10 @@ head(series)</code></pre>
 <h3>Consultar publicaciones</h3>
 <p>Se puede obtener un listado de las todas las publicaciones del
 sistema con la función <a
-href="https://uvima.github.io/ineapir/reference/get_metadata_publications.html">get_metadata_publications()</a>.
+href="https://es-ine.github.io/ineapir/reference/get_metadata_publications.html">get_metadata_publications()</a>.
 Además, también se pueden consultar las fechas de publicación de una
 publicación en particular con la función <a
-href="https://uvima.github.io/ineapir/reference/get_metadata_publication_dates.html">get_metadata_publication_dates()</a>.</p>
+href="https://es-ine.github.io/ineapir/reference/get_metadata_publication_dates.html">get_metadata_publication_dates()</a>.</p>
 <div id="section-obtener-el-litado-de-todas-las-publicaciones"
 class="section level4">
 <h4><strong>Obtener el litado de todas las publicaciones</strong></h4>
@@ -1022,29 +1022,29 @@ significa hacer menos llamadas de verificación a la API.</p>
 <div class="tutorial-exercise" data-label="validate_2"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
-<pre class="text"><code># The filter 
-filter &lt;- list(&quot;115&quot; = &quot;2&quot;,     # variable id = 115, value id = 2
-               &quot;3&quot; = &quot;74&quot; ,     # variable id = 3, value id = 74
-               &quot;762&quot; = &quot;304092&quot; # variable id = 762, value id = 304092
+<pre class="text"><code>filter &lt;- list(&quot;3&quot; = &quot;74&quot; ,      # variable id = 3, valor id = 74
+               &quot;762&quot; = &quot;304092&quot;, # variable id = 762, valor id = 304092
+               &quot;70&quot; = &quot;9003&quot;     # variable id = 70, valor id = 9003
                )
 
 # Con verbose = TRUE and validate = TRUE
-ipc &lt;- get_data_series_filter(operation = &quot;IPC&quot;, filter = filter, periodicity = 1,
-                       verbose = TRUE)</code></pre>
+ipc &lt;- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,
+                      tip = &quot;A&quot;, nlast = 2, verbose = TRUE, validate = TRUE)
+ipc[,c(&quot;Nombre&quot;,&quot;T3_Periodo&quot;,&quot;Anyo&quot;,&quot;Valor&quot;)]</code></pre>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
 <div class="tutorial-exercise" data-label="validate_3"
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
-<pre class="text"><code># The filter 
-filter &lt;- list(&quot;115&quot; = &quot;2&quot;,     # variable id = 115, value id = 2
-               &quot;3&quot; = &quot;74&quot; ,     # variable id = 3, value id = 74
-               &quot;762&quot; = &quot;304092&quot; # variable id = 762, value id = 304092
+<pre class="text"><code>filter &lt;- list(&quot;3&quot; = &quot;74&quot; ,      # variable id = 3, valor id = 74
+               &quot;762&quot; = &quot;304092&quot;, # variable id = 762, valor id = 304092
+               &quot;70&quot; = &quot;9003&quot;     # variable id = 70, valor id = 9003
                )
 
 # Con verbose = TRUE and validate = FALSE
-ipc &lt;- get_data_series_filter(operation = &quot;IPC&quot;, filter = filter, periodicity = 1,
-                       verbose = TRUE, validate = FALSE)</code></pre>
+ipc &lt;- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,
+                      tip = &quot;A&quot;, nlast = 2, verbose = TRUE, validate = FALSE)
+ipc[,c(&quot;Nombre&quot;,&quot;T3_Periodo&quot;,&quot;Anyo&quot;,&quot;Valor&quot;)]</code></pre>
 <script type="application/json" data-ui-opts="1">{"engine":"r","has_checker":false,"caption":"<span data-i18n=\"text.enginecap\" data-i18n-opts=\"{&quot;engine&quot;:&quot;R&quot;}\">R Code<\/span>"}</script>
 </div>
 </div>
@@ -1388,7 +1388,7 @@ learnr:::store_exercise_cache(structure(list(label = "tabla6", global_setup = st
 "remotes::install_github(\"es-ine/ineapir\")", "library(ineapir)", 
 "knitr::opts_chunk$set(echo = FALSE)"), chunk_opts = list(label = "setup", 
     include = FALSE)), setup = NULL, chunks = list(list(label = "tabla6", 
-    code = "filter <- list(\"3\" = \"74\" ,      # variable id = 3, valor id = 74\n               \"762\" = \"304092\", # variable id = 762, valor id = 304092\n               \"70\" = \"9003\"     # variable id = 70, valor id = 9003\n               )\n\n# Obtenemos los datos filtrados \nipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,\n                      tip = \"A\", nlast = 1, validate = FALSE)\nipc[,c(\"Nombre\",\"T3_Periodo\",\"Anyo\",\"Valor\")]", 
+    code = "filter <- list(\"3\" = \"74\" ,      # variable id = 3, valor id = 74\n               \"762\" = \"304092\", # variable id = 762, valor id = 304092\n               \"70\" = \"9003\"     # variable id = 70, valor id = 9003\n               )\n\n# Obtenemos los datos filtrados \nipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,\n                      tip = \"A\", nlast = 2, validate = FALSE)\nipc[,c(\"Nombre\",\"T3_Periodo\",\"Anyo\",\"Valor\")]", 
     opts = list(label = "\"tabla6\"", exercise = "TRUE"), engine = "r")), 
     code_check = NULL, error_check = NULL, check = NULL, solution = NULL, 
     tests = NULL, options = list(eval = FALSE, echo = TRUE, results = "markup", 
@@ -1413,7 +1413,7 @@ learnr:::store_exercise_cache(structure(list(label = "tabla6", global_setup = st
         "               \"70\" = \"9003\"     # variable id = 70, valor id = 9003", 
         "               )", "", "# Obtenemos los datos filtrados ", 
         "ipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,", 
-        "                      tip = \"A\", nlast = 1, validate = FALSE)", 
+        "                      tip = \"A\", nlast = 2, validate = FALSE)", 
         "ipc[,c(\"Nombre\",\"T3_Periodo\",\"Anyo\",\"Valor\")]"
         ), out.width.px = 624, out.height.px = 384, params.src = "tabla6, exercise=TRUE", 
         fig.num = 0, exercise.df_print = "paged", exercise.checker = "NULL"), 
@@ -1434,7 +1434,7 @@ learnr:::store_exercise_cache(structure(list(label = "tabla6b", global_setup = s
 "remotes::install_github(\"es-ine/ineapir\")", "library(ineapir)", 
 "knitr::opts_chunk$set(echo = FALSE)"), chunk_opts = list(label = "setup", 
     include = FALSE)), setup = NULL, chunks = list(list(label = "tabla6b", 
-    code = "filter <- list(\"3\" = \"74\" ,      # variable id = 3, valor id = 74\n               \"762\" = \"304092\", # variable id = 762, valor id = 304092\n               \"70\" = \"\"         # variable id = 70, todos los valores\n               )\n\n# Obtenemos los datos filtrados \nipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,\n                      tip = \"A\", nlast = 1, validate = FALSE)\nipc[,c(\"Nombre\",\"T3_Periodo\",\"Anyo\",\"Valor\")]", 
+    code = "filter <- list(\"3\" = \"74\" ,      # variable id = 3, valor id = 74\n               \"762\" = \"304092\", # variable id = 762, valor id = 304092\n               \"70\" = \"\"         # variable id = 70, todos los valores\n               )\n\n# Obtenemos los datos filtrados \nipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,\n                      tip = \"A\", nlast = 2, validate = FALSE)\nipc[,c(\"Nombre\",\"T3_Periodo\",\"Anyo\",\"Valor\")]", 
     opts = list(label = "\"tabla6b\"", exercise = "TRUE"), engine = "r")), 
     code_check = NULL, error_check = NULL, check = NULL, solution = NULL, 
     tests = NULL, options = list(eval = FALSE, echo = TRUE, results = "markup", 
@@ -1459,7 +1459,7 @@ learnr:::store_exercise_cache(structure(list(label = "tabla6b", global_setup = s
         "               \"70\" = \"\"         # variable id = 70, todos los valores", 
         "               )", "", "# Obtenemos los datos filtrados ", 
         "ipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,", 
-        "                      tip = \"A\", nlast = 1, validate = FALSE)", 
+        "                      tip = \"A\", nlast = 2, validate = FALSE)", 
         "ipc[,c(\"Nombre\",\"T3_Periodo\",\"Anyo\",\"Valor\")]"
         ), out.width.px = 624, out.height.px = 384, params.src = "tabla6b, exercise=TRUE", 
         fig.num = 0, exercise.df_print = "paged", exercise.checker = "NULL"), 
@@ -1480,7 +1480,7 @@ learnr:::store_exercise_cache(structure(list(label = "tabla6c", global_setup = s
 "remotes::install_github(\"es-ine/ineapir\")", "library(ineapir)", 
 "knitr::opts_chunk$set(echo = FALSE)"), chunk_opts = list(label = "setup", 
     include = FALSE)), setup = NULL, chunks = list(list(label = "tabla6c", 
-    code = "filter <- list(\"3\" = \"74\" ,      # variable id = 3, valor id = 74\n               \"762\" = \"304092\", # variable id = 762, valor id = 304092\n               \"70\" = c(\"9003\", \"8999\")  # variable id = 70, valores id 9003 y 8999\n               )\n\n# Obtenemos los datos filtrados \nipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,\n                      tip = \"A\", nlast = 1, validate = FALSE)\nipc[,c(\"Nombre\",\"T3_Periodo\",\"Anyo\",\"Valor\")]", 
+    code = "filter <- list(\"3\" = \"74\" ,      # variable id = 3, valor id = 74\n               \"762\" = \"304092\", # variable id = 762, valor id = 304092\n               \"70\" = c(\"9003\", \"8999\")  # variable id = 70, valores id 9003 y 8999\n               )\n\n# Obtenemos los datos filtrados \nipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,\n                      tip = \"A\", nlast = 2, validate = FALSE)\nipc[,c(\"Nombre\",\"T3_Periodo\",\"Anyo\",\"Valor\")]", 
     opts = list(label = "\"tabla6c\"", exercise = "TRUE"), engine = "r")), 
     code_check = NULL, error_check = NULL, check = NULL, solution = NULL, 
     tests = NULL, options = list(eval = FALSE, echo = TRUE, results = "markup", 
@@ -1505,7 +1505,7 @@ learnr:::store_exercise_cache(structure(list(label = "tabla6c", global_setup = s
         "               \"70\" = c(\"9003\", \"8999\")  # variable id = 70, valores id 9003 y 8999", 
         "               )", "", "# Obtenemos los datos filtrados ", 
         "ipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,", 
-        "                      tip = \"A\", nlast = 1, validate = FALSE)", 
+        "                      tip = \"A\", nlast = 2, validate = FALSE)", 
         "ipc[,c(\"Nombre\",\"T3_Periodo\",\"Anyo\",\"Valor\")]"
         ), out.width.px = 624, out.height.px = 384, params.src = "tabla6c, exercise=TRUE", 
         fig.num = 0, exercise.df_print = "paged", exercise.checker = "NULL"), 
@@ -3008,7 +3008,7 @@ learnr:::store_exercise_cache(structure(list(label = "validate_2", global_setup 
 "remotes::install_github(\"es-ine/ineapir\")", "library(ineapir)", 
 "knitr::opts_chunk$set(echo = FALSE)"), chunk_opts = list(label = "setup", 
     include = FALSE)), setup = NULL, chunks = list(list(label = "validate_2", 
-    code = "# The filter \nfilter <- list(\"115\" = \"2\",     # variable id = 115, value id = 2\n               \"3\" = \"74\" ,     # variable id = 3, value id = 74\n               \"762\" = \"304092\" # variable id = 762, value id = 304092\n               )\n\n# Con verbose = TRUE and validate = TRUE\nipc <- get_data_series_filter(operation = \"IPC\", filter = filter, periodicity = 1,\n                       verbose = TRUE)", 
+    code = "filter <- list(\"3\" = \"74\" ,      # variable id = 3, valor id = 74\n               \"762\" = \"304092\", # variable id = 762, valor id = 304092\n               \"70\" = \"9003\"     # variable id = 70, valor id = 9003\n               )\n\n# Con verbose = TRUE and validate = TRUE\nipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,\n                      tip = \"A\", nlast = 2, verbose = TRUE, validate = TRUE)\nipc[,c(\"Nombre\",\"T3_Periodo\",\"Anyo\",\"Valor\")]", 
     opts = list(label = "\"validate_2\"", exercise = "TRUE"), 
     engine = "r")), code_check = NULL, error_check = NULL, check = NULL, 
     solution = NULL, tests = NULL, options = list(eval = FALSE, 
@@ -3028,13 +3028,14 @@ learnr:::store_exercise_cache(structure(list(label = "validate_2", global_setup 
         message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
         max.print = 1000, label = "validate_2", exercise = TRUE, 
-        code = c("# The filter ", "filter <- list(\"115\" = \"2\",     # variable id = 115, value id = 2", 
-        "               \"3\" = \"74\" ,     # variable id = 3, value id = 74", 
-        "               \"762\" = \"304092\" # variable id = 762, value id = 304092", 
+        code = c("filter <- list(\"3\" = \"74\" ,      # variable id = 3, valor id = 74", 
+        "               \"762\" = \"304092\", # variable id = 762, valor id = 304092", 
+        "               \"70\" = \"9003\"     # variable id = 70, valor id = 9003", 
         "               )", "", "# Con verbose = TRUE and validate = TRUE", 
-        "ipc <- get_data_series_filter(operation = \"IPC\", filter = filter, periodicity = 1,", 
-        "                       verbose = TRUE)"), out.width.px = 624, 
-        out.height.px = 384, params.src = "validate_2, exercise=TRUE", 
+        "ipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,", 
+        "                      tip = \"A\", nlast = 2, verbose = TRUE, validate = TRUE)", 
+        "ipc[,c(\"Nombre\",\"T3_Periodo\",\"Anyo\",\"Valor\")]"
+        ), out.width.px = 624, out.height.px = 384, params.src = "validate_2, exercise=TRUE", 
         fig.num = 0, exercise.df_print = "paged", exercise.checker = "NULL"), 
     engine = "r", version = "4"), class = c("r", "tutorial_exercise"
 )))
@@ -3053,7 +3054,7 @@ learnr:::store_exercise_cache(structure(list(label = "validate_3", global_setup 
 "remotes::install_github(\"es-ine/ineapir\")", "library(ineapir)", 
 "knitr::opts_chunk$set(echo = FALSE)"), chunk_opts = list(label = "setup", 
     include = FALSE)), setup = NULL, chunks = list(list(label = "validate_3", 
-    code = "# The filter \nfilter <- list(\"115\" = \"2\",     # variable id = 115, value id = 2\n               \"3\" = \"74\" ,     # variable id = 3, value id = 74\n               \"762\" = \"304092\" # variable id = 762, value id = 304092\n               )\n\n# Con verbose = TRUE and validate = FALSE\nipc <- get_data_series_filter(operation = \"IPC\", filter = filter, periodicity = 1,\n                       verbose = TRUE, validate = FALSE)", 
+    code = "filter <- list(\"3\" = \"74\" ,      # variable id = 3, valor id = 74\n               \"762\" = \"304092\", # variable id = 762, valor id = 304092\n               \"70\" = \"9003\"     # variable id = 70, valor id = 9003\n               )\n\n# Con verbose = TRUE and validate = FALSE\nipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,\n                      tip = \"A\", nlast = 2, verbose = TRUE, validate = FALSE)\nipc[,c(\"Nombre\",\"T3_Periodo\",\"Anyo\",\"Valor\")]", 
     opts = list(label = "\"validate_3\"", exercise = "TRUE"), 
     engine = "r")), code_check = NULL, error_check = NULL, check = NULL, 
     solution = NULL, tests = NULL, options = list(eval = FALSE, 
@@ -3073,12 +3074,13 @@ learnr:::store_exercise_cache(structure(list(label = "validate_3", global_setup 
         message = TRUE, render = NULL, ref.label = NULL, child = NULL, 
         engine = "r", split = FALSE, include = TRUE, purl = TRUE, 
         max.print = 1000, label = "validate_3", exercise = TRUE, 
-        code = c("# The filter ", "filter <- list(\"115\" = \"2\",     # variable id = 115, value id = 2", 
-        "               \"3\" = \"74\" ,     # variable id = 3, value id = 74", 
-        "               \"762\" = \"304092\" # variable id = 762, value id = 304092", 
+        code = c("filter <- list(\"3\" = \"74\" ,      # variable id = 3, valor id = 74", 
+        "               \"762\" = \"304092\", # variable id = 762, valor id = 304092", 
+        "               \"70\" = \"9003\"     # variable id = 70, valor id = 9003", 
         "               )", "", "# Con verbose = TRUE and validate = FALSE", 
-        "ipc <- get_data_series_filter(operation = \"IPC\", filter = filter, periodicity = 1,", 
-        "                       verbose = TRUE, validate = FALSE)"
+        "ipc <- get_data_table(idTable = 50913, filter = filter, unnest = TRUE,", 
+        "                      tip = \"A\", nlast = 2, verbose = TRUE, validate = FALSE)", 
+        "ipc[,c(\"Nombre\",\"T3_Periodo\",\"Anyo\",\"Valor\")]"
         ), out.width.px = 624, out.height.px = 384, params.src = "validate_3, exercise=TRUE", 
         fig.num = 0, exercise.df_print = "paged", exercise.checker = "NULL"), 
     engine = "r", version = "4"), class = c("r", "tutorial_exercise"
@@ -3308,7 +3310,7 @@ learnr:::store_exercise_cache(structure(list(label = "expreg", global_setup = st
 <!--/html_preserve-->
 <!--html_preserve-->
 <script type="application/shiny-prerendered" data-context="execution_dependencies">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51]}},"value":[{"type":"character","attributes":{},"value":["backports","base","bslib","cachem","callr","checkmate","cli","compiler","curl","datasets","desc","digest","ellipsis","evaluate","fastmap","fontawesome","graphics","grDevices","htmltools","htmlwidgets","httpuv","ineapir","jquerylib","jsonlite","knitr","later","learnr","lifecycle","magrittr","methods","mime","pkgbuild","processx","promises","ps","R6","Rcpp","remotes","rlang","rmarkdown","rprojroot","rstudioapi","sass","shiny","stats","tools","utils","withr","xfun","xtable","yaml"]},{"type":"character","attributes":{},"value":["1.4.1","4.3.3","0.6.1","1.0.8","3.7.5","2.3.1","3.6.2","4.3.3","5.2.1","4.3.3","1.4.3","0.6.34","0.3.2","0.23","1.1.1","0.5.2","4.3.3","4.3.3","0.5.7","1.6.4","1.6.14","0.0.0.9000","0.1.4","1.8.8","1.45","1.3.2","0.11.5","1.0.4","2.0.3","4.3.3","0.12","1.4.3","3.8.3","1.2.1","1.7.6","2.5.1","1.0.12","2.4.2.1","1.1.3","2.26","2.0.4","0.15.0","0.4.8","1.8.0","4.3.3","4.3.3","4.3.3","3.0.0","0.42","1.8-4","2.3.8"]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46]}},"value":[{"type":"character","attributes":{},"value":["backports","base","bslib","cachem","checkmate","cli","compiler","curl","datasets","digest","ellipsis","evaluate","fastmap","fontawesome","graphics","grDevices","htmltools","htmlwidgets","httpuv","ineapir","jquerylib","jsonlite","knitr","later","learnr","lifecycle","magrittr","methods","mime","promises","R6","Rcpp","remotes","rlang","rmarkdown","rprojroot","rstudioapi","sass","shiny","stats","tools","utils","withr","xfun","xtable","yaml"]},{"type":"character","attributes":{},"value":["1.4.1","4.3.3","0.6.1","1.0.8","2.3.1","3.6.2","4.3.3","5.2.1","4.3.3","0.6.34","0.3.2","0.23","1.1.1","0.5.2","4.3.3","4.3.3","0.5.7","1.6.4","1.6.14","0.0.0.9000","0.1.4","1.8.8","1.45","1.3.2","0.11.5","1.0.4","2.0.3","4.3.3","0.12","1.2.1","2.5.1","1.0.12","2.4.2.1","1.1.3","2.26","2.0.4","0.15.0","0.4.8","1.8.0","4.3.3","4.3.3","4.3.3","3.0.0","0.42","1.8-4","2.3.8"]}]}]}
 </script>
 <!--/html_preserve-->
 </div>
