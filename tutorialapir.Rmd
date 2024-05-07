@@ -6,7 +6,7 @@ runtime: shiny_prerendered
 
 ```{r setup, include=FALSE}
 library(learnr)
-remotes::install_github("uvima/ineapir")
+remotes::install_github("es-ine/ineapir")
 library(ineapir)
 knitr::opts_chunk$set(echo = FALSE)
 ```
