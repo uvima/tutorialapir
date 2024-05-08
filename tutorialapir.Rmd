@@ -245,7 +245,7 @@ ipc[,c("Nombre","T3_Periodo","Anyo","Valor")]
 ```
 
 
-#### Ejemplo 3
+#### Ejemplo 2
 Por ejemplo, para la tabla [Población residente por fecha, sexo, grupo de edad y nacionalidad](https://www.ine.es/jaxiT3/Tabla.htm?t=56936) (Id 56936)
 
 ```{r tabla16, exercise=TRUE}
