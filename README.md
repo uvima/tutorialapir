@@ -1,6 +1,10 @@
 # Tutorial del paquete INEapir
 
-Utiliza el siguiente enlace para empezar una sesión interactiva de RStudio:
+Este repositorio contiene un tutorial interactivo del paquete de R
+[INEapir](https://github.com/es-ine/ineapir/). Puede descargar el fichero
+tutorialapir.Rmd y ejecutar Run Document en RStudio.
+
+Alternativamente, puede utilizar el siguiente enlace para empezar una sesión interactiva de RStudio:
 
 RStudio: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/uvima/tutorialapir/main?urlpath=rstudio)
 
